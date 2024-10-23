@@ -4,6 +4,8 @@ import { openai } from "@ai-sdk/openai";
 import { convertToCoreMessages, streamText, Message } from "ai";
 import { useChat } from "ai/react";
 
+import { Input } from "../components/ui/input";
+
 const chat = createServerFn(
   "POST",
   async ({ messages }: { messages: Message[] }) => {
@@ -41,8 +43,8 @@ function Home() {
         onSubmit={handleSubmit}
         className="fixed bottom-0 w-full max-w-md mb-8 border border-gray-300 rounded shadow-xl"
       >
-        <input
-          className="w-full p-2"
+        <Input
+          className="w-full"
           value={input}
           placeholder="Say something..."
           onChange={handleInputChange}

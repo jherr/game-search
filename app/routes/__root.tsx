@@ -36,7 +36,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <Head>
         <Meta />
       </Head>
-      <Body className="bg-gray-100">
+      <Body>
         {children}
         <ScrollRestoration />
         <Scripts />
