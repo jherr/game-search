@@ -1,0 +1,137 @@
+[
+  {
+    "name": "Call of Duty: Black Ops 6",
+    "genre": "FPS",
+    "releaseYear": 2024,
+    "description": "Forced to go rogue. Hunted from within. This is Call of Duty®: Black Ops 6. Developed by Treyarch and Raven, Black Ops 6 is a spy action thriller set in the early 90s, a period of transition and upheaval in global politics, characterized by the end of the Cold War and the rise of the United States as a single superpower. With a mind-bending narrative, and unbound by the rules of engagement, this is signature Black Ops. The Black Ops 6 Campaign provides dynamic moment-to-moment gameplay that includes a variety of play spaces with blockbuster set pieces and action-packed moments, high-stakes heists, and cloak-and-dagger spy activity. In a best-in-class Multiplayer experience, players will test their skills across 16 new maps at launch, including 12 core 6v6 maps and 4 Strike maps that can be played 2v2 or 6v6. Black Ops 6 also marks the epic return of Round-Based Zombies, the fan-favorite mode where players will take down hordes of the undead in two brand-new maps at launch. Post-launch, players can look forward to even more exciting maps and groundbreaking experiences dropping into both Multiplayer and Zombies.",
+    "tags": [
+      "FPS",
+      "Spy",
+      "Action",
+      "Thriller",
+      "Early 90s",
+      "Cold War",
+      "Superpower"
+    ],
+    "image": "call-of-duty.jpg"
+  },
+  {
+    "name": "Planet Coaster 2",
+    "genre": "Simulation",
+    "releaseYear": 2024,
+    "description": "Create a splash with Planet Coaster 2 - sequel to the world’s best coaster park simulator! Reach new heights of creativity, management, and sharing as you construct the theme parks of your dreams combining epic water rides and coasters to delight and thrill your park guests. Dive in now!",
+    "tags": ["Simulation", "Theme Park", "Management", "Realism", "Simulation"],
+    "image": "planet-coaster-2.jpg"
+  },
+  {
+    "name": "Apex Legends",
+    "genre": "FPS",
+    "releaseYear": 2020,
+    "description": "Conquer with character in Apex Legends, a free-to-play* Hero shooter where legendary characters with powerful abilities team up to battle for fame & fortune on the fringes of the Frontier. Master an ever-growing roster of diverse Legends, deep-tactical squad play, and bold, new innovations that go beyond the Battle Royale experience — all within a rugged world where anything goes. Welcome to the next evolution of Hero Shooter.",
+    "tags": [
+      "FPS",
+      "Hero Shooter",
+      "Free-to-play",
+      "Battle Royale",
+      "Frontier",
+      "Heroes"
+    ],
+    "image": "apex-legends.jpg"
+  },
+  {
+    "name": "Throne And Liberty",
+    "genre": "Strategy",
+    "releaseYear": 2024,
+    "description": "Welcome to THRONE AND LIBERTY, a free-to-play MMORPG that takes place in the vast open world of Solisium. You can scale expansive mountain ranges for new vantage points, scan open skies, traverse sprawling plains, explore a land full of depth and opportunity. Adapt your fight to survive and thrive through strategic decisions in PvP, PvE or both as you encounter evolving battlefields impacted by weather, time of day, and other players. There is no single path to victory as you seek to defeat Kazar and claim the throne while keeping rival guilds at bay.",
+    "tags": [
+      "Strategy",
+      "Turn-based",
+      "1800s",
+      "Industrial Revolution",
+      "Nationalism"
+    ],
+    "image": "throne-and-liberty.jpg"
+  },
+  {
+    "name": "Dragon Age: The Veilguard",
+    "genre": "RPG",
+    "releaseYear": 2024,
+    "description": "Unite the Veilguard and defy the gods in Dragon Age™: The Veilguard, an immersive single-player RPG where you become the leader others believe in.",
+    "tags": [
+      "RPG",
+      "Single-player",
+      "Dragon Age",
+      "Veilguard",
+      "Defy the gods"
+    ],
+    "image": "dragon-age-veilguard.jpg"
+  },
+  {
+    "name": "Baldur's Gate 3",
+    "genre": "RPG",
+    "releaseYear": 2024,
+    "description": "Baldur’s Gate 3 is a story-rich, party-based RPG set in the universe of Dungeons & Dragons, where your choices shape a tale of fellowship and betrayal, survival and sacrifice, and the lure of absolute power. Gather your party and return to the Forgotten Realms in a tale of fellowship and betrayal, sacrifice and survival, and the lure of absolute power. Mysterious abilities are awakening inside you, drawn from a mind flayer parasite planted in your brain. Resist, and turn darkness against itself. Or embrace corruption, and become ultimate evil. From the creators of Divinity: Original Sin 2 comes a next-generation RPG, set in the world of Dungeons & Dragons.",
+    "tags": [
+      "RPG",
+      "Single-player",
+      "Turn-based",
+      "Forgotten Realms",
+      "Adventurers"
+    ],
+    "image": "baldurs-gate-3.jpg"
+  },
+  {
+    "name": "Pubg: Battlegrounds",
+    "genre": "FPS",
+    "releaseYear": 2017,
+    "description": "PUBG: BATTLEGROUNDS is a battle royale shooter that pits 100 players against each other in a struggle for survival. Players are dropped onto an island and must scavenge for weapons and equipment to eliminate others while avoiding getting killed themselves. The available safe zone on the map decreases in size over time, directing surviving players into tighter areas to force encounters. The last player or team standing wins the game.",
+    "tags": ["FPS", "Battle Royale", "Shooter", "Survival", "Battle"],
+    "image": "pubg-battlegrounds.jpg"
+  },
+  {
+    "name": "Counter Strike 2",
+    "genre": "FPS",
+    "releaseYear": 2012,
+    "description": "For over two decades, Counter-Strike has offered an elite competitive experience, one shaped by millions of players from across the globe. And now the next chapter in the CS story is about to begin. This is Counter-Strike 2.",
+    "tags": ["FPS", "Competitive", "Online", "Action", "Multiplayer"],
+    "image": "counter-strike-2.jpg"
+  },
+  {
+    "name": "Mirthwood",
+    "genre": "RPG",
+    "releaseYear": 2024,
+    "description": "Embark on an enchanting journey and brave ferocious creatures in an immersive medieval fantasy world. Will you settle a new homestead to live a life of farming and trade, or pick up the sword and take up the adventurers' path?",
+    "tags": ["RPG", "Single-player", "Turn-based", "Mirthwood", "Adventurers"],
+    "image": "mirthwood.jpg"
+  },
+  {
+    "name": "Enshrouded",
+    "genre": "RPG",
+    "releaseYear": 2024,
+    "description": "You are Flameborn, last ember of hope of a dying race. Awaken, survive the terror of a corrupting fog, and reclaim the lost beauty of your kingdom. Venture into a vast world, vanquish punishing bosses, build grand halls and forge your path in this co-op survival action RPG for up to 16 players.",
+    "tags": ["RPG", "Single-player", "Turn-based", "Darkness", "Mystery"],
+    "image": "enshrouded.jpg"
+  },
+  {
+    "name": "Cyberpunk 2077",
+    "genre": "RPG",
+    "releaseYear": 2020,
+    "description": "Cyberpunk 2077 is an open-world, action-adventure RPG set in the sprawling urban dystopia of Night City. Through a story of destiny and betrayal, you play as V, a mercenary outlaw going after a one-of-a-kind implant that is the key to immortality. Set in the dark future of Night City — a dangerous megalopolis obsessed with power, glamor, and ceaseless body modification.",
+    "tags": ["RPG", "Open-world", "Action", "Adventure", "Cyberpunk"],
+    "image": "cyberpunk-2077.jpg"
+  },
+  {
+    "name": "Teenage Mutant Ninja Turtles: Splintered Fate",
+    "genre": "Action",
+    "releaseYear": 2024,
+    "description": "TMNT Splintered Fate - Unleash the Turtles in a rogue-like quest to rescue Splinter from the Foot Clan! Master ninja skills, unite in bodacious co-op gameplay, and conquer iconic NYC locales.",
+    "tags": [
+      "Action",
+      "Adventure",
+      "Ninja Turtles",
+      "New York City",
+      "Save the city"
+    ],
+    "image": "tmnt.jpg"
+  }
+]

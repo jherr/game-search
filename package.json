@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "^0.0.68",
+    "@radix-ui/react-slot": "^1.1.0",
     "@tanstack/react-router": "^1.76.1",
     "@tanstack/start": "^1.76.1",
     "@vitejs/plugin-react": "^4.3.3",
@@ -17,11 +18,13 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.453.0",
+    "ollama-ai-provider": "^0.16.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
-    "vinxi": "0.4.3"
+    "vinxi": "0.4.3",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "^22.5.4",

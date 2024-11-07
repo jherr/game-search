@@ -1,17 +1,37 @@
+// import { useSession } from "vinxi/http";
 import { createFileRoute } from "@tanstack/react-router";
 import { createServerFn } from "@tanstack/start";
+import { convertToCoreMessages, streamText, Message, tool } from "ai";
 import { openai } from "@ai-sdk/openai";
-import { convertToCoreMessages, streamText, Message } from "ai";
 import { useChat } from "ai/react";
+import { z } from "zod";
+
+import games from "../games.json";
 
 import { Input } from "../components/ui/input";
+
+const system = `
+  You are a helpful assistant that can search for video games in the provided database and provide information about them.
+  You can use the "games" tool to get the list of all games.
+`;
 
 const chat = createServerFn(
   "POST",
   async ({ messages }: { messages: Message[] }) => {
     const result = await streamText({
-      model: openai("gpt-4-turbo"),
+      model: openai("gpt-4o"),
       messages: convertToCoreMessages(messages),
+      maxSteps: 10,
+      system,
+      tools: {
+        games: tool({
+          description: "returns a list of games",
+          parameters: z.object({}),
+          execute: async () => {
+            return games;
+          },
+        }),
+      },
     });
     return result.toDataStreamResponse();
   }
@@ -21,13 +41,13 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const fetch: typeof window.fetch = async (input, init) => {
+const chatFetchOverride: typeof window.fetch = async (input, init) => {
   return chat(JSON.parse(init!.body as string));
 };
 
 function Home() {
   const { messages, input, handleInputChange, handleSubmit } = useChat({
-    fetch,
+    fetch: chatFetchOverride,
   });
 
   return (
