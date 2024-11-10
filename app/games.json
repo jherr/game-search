@@ -14,7 +14,9 @@
       "Cold War",
       "Superpower"
     ],
-    "image": "call-of-duty.jpg"
+    "image": "call-of-duty.jpg",
+    "price": "$69.99",
+    "positive-reviews": "59%"
   },
   {
     "id": "2",
@@ -23,7 +25,9 @@
     "releaseYear": 2024,
     "description": "Create a splash with Planet Coaster 2 - sequel to the world’s best coaster park simulator! Reach new heights of creativity, management, and sharing as you construct the theme parks of your dreams combining epic water rides and coasters to delight and thrill your park guests. Dive in now!",
     "tags": ["Simulation", "Theme Park", "Management", "Realism", "Simulation"],
-    "image": "planet-coaster-2.jpg"
+    "image": "planet-coaster-2.jpg",
+    "price": "$49.99",
+    "positive-reviews": "59%"
   },
   {
     "id": "3",
@@ -39,7 +43,9 @@
       "Frontier",
       "Heroes"
     ],
-    "image": "apex-legends.jpg"
+    "image": "apex-legends.jpg",
+    "price": "Free to play",
+    "positive-reviews": "32%"
   },
   {
     "id": "4",
@@ -54,7 +60,9 @@
       "Industrial Revolution",
       "Nationalism"
     ],
-    "image": "throne-and-liberty.jpg"
+    "image": "throne-and-liberty.jpg",
+    "price": "Free to play",
+    "positive-reviews": "68%"
   },
   {
     "id": "5",
@@ -69,7 +77,9 @@
       "Veilguard",
       "Defy the gods"
     ],
-    "image": "dragon-age-veilguard.jpg"
+    "image": "dragon-age-veilguard.jpg",
+    "price": "$59.99",
+    "positive-reviews": "72%"
   },
   {
     "id": "6",
@@ -84,16 +94,20 @@
       "Forgotten Realms",
       "Adventurers"
     ],
-    "image": "baldurs-gate-3.jpg"
+    "image": "baldurs-gate-3.jpg",
+    "price": "$47.99",
+    "positive-reviews": "96%"
   },
   {
     "id": "7",
-    "name": "Pubg: Battlegrounds",
+    "name": "PUBG: Battlegrounds",
     "genre": "FPS",
     "releaseYear": 2017,
     "description": "PUBG: BATTLEGROUNDS is a battle royale shooter that pits 100 players against each other in a struggle for survival. Players are dropped onto an island and must scavenge for weapons and equipment to eliminate others while avoiding getting killed themselves. The available safe zone on the map decreases in size over time, directing surviving players into tighter areas to force encounters. The last player or team standing wins the game.",
     "tags": ["FPS", "Battle Royale", "Shooter", "Survival", "Battle"],
-    "image": "pubg-battlegrounds.jpg"
+    "image": "pubg-battlegrounds.jpg",
+    "price": "Free to play",
+    "positive-reviews": "58%"
   },
   {
     "id": "8",
@@ -102,7 +116,9 @@
     "releaseYear": 2012,
     "description": "For over two decades, Counter-Strike has offered an elite competitive experience, one shaped by millions of players from across the globe. And now the next chapter in the CS story is about to begin. This is Counter-Strike 2.",
     "tags": ["FPS", "Competitive", "Online", "Action", "Multiplayer"],
-    "image": "counter-strike-2.jpg"
+    "image": "counter-strike-2.jpg",
+    "price": "Free to play",
+    "positive-reviews": "79%"
   },
   {
     "id": "9",
@@ -111,7 +127,9 @@
     "releaseYear": 2024,
     "description": "Embark on an enchanting journey and brave ferocious creatures in an immersive medieval fantasy world. Will you settle a new homestead to live a life of farming and trade, or pick up the sword and take up the adventurers' path?",
     "tags": ["RPG", "Single-player", "Turn-based", "Mirthwood", "Adventurers"],
-    "image": "mirthwood.jpg"
+    "image": "mirthwood.jpg",
+    "price": "$22.49",
+    "positive-reviews": "70%"
   },
   {
     "id": "10",
@@ -120,7 +138,9 @@
     "releaseYear": 2024,
     "description": "You are Flameborn, last ember of hope of a dying race. Awaken, survive the terror of a corrupting fog, and reclaim the lost beauty of your kingdom. Venture into a vast world, vanquish punishing bosses, build grand halls and forge your path in this co-op survival action RPG for up to 16 players.",
     "tags": ["RPG", "Single-player", "Turn-based", "Darkness", "Mystery"],
-    "image": "enshrouded.jpg"
+    "image": "enshrouded.jpg",
+    "price": "$23.99",
+    "positive-reviews": "83%"
   },
   {
     "id": "11",
@@ -129,7 +149,9 @@
     "releaseYear": 2020,
     "description": "Cyberpunk 2077 is an open-world, action-adventure RPG set in the sprawling urban dystopia of Night City. Through a story of destiny and betrayal, you play as V, a mercenary outlaw going after a one-of-a-kind implant that is the key to immortality. Set in the dark future of Night City — a dangerous megalopolis obsessed with power, glamor, and ceaseless body modification.",
     "tags": ["RPG", "Open-world", "Action", "Adventure", "Cyberpunk"],
-    "image": "cyberpunk-2077.jpg"
+    "image": "cyberpunk-2077.jpg",
+    "price": "$59.99",
+    "positive-reviews": "84%"
   },
   {
     "id": "12",
@@ -144,6 +166,19 @@
       "New York City",
       "Save the city"
     ],
-    "image": "tmnt.jpg"
+    "image": "tmnt.jpg",
+    "price": "$26.99",
+    "positive-reviews": "84%"
+  },
+  {
+    "id": "13",
+    "name": "Farming Simulator 25",
+    "genre": "Simulation",
+    "releaseYear": 2025,
+    "description": "Farming Simulator 25 invites you to join the rewarding farm life. Whether you build your legacy single-handedly or cooperatively in multiplayer - it’s your farm, you decide! This Farm is Your Farm! Build a farm along winding rivers and historic grain elevators in North America, surrounded by ponds in Central Europe, or in a lush East Asian landscape filled with rice paddies near a neon-lit port city. Grow crops, tend to animals, practice forestry, and manage an empire of business ventures with farm shops, productions, and constructions!",
+    "tags": ["Simulation", "Farming", "Realism", "Open-world", "Career"],
+    "image": "farming-simulator-2025.jpg",
+    "price": "$49.99",
+    "positive-reviews": "n/a"
   }
 ]

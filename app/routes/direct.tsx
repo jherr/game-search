@@ -1,156 +1,78 @@
-// import { useSession } from "vinxi/http";
-import { useState } from 'react'
-import { createFileRoute } from '@tanstack/react-router'
-import { createServerFn } from '@tanstack/start'
+import { useState } from "react";
+import { createFileRoute } from "@tanstack/react-router";
+import { createServerFn } from "@tanstack/start";
+import Markdown from "react-markdown";
 
-import { z } from 'zod'
-import { zodToJsonSchema } from 'zod-to-json-schema'
+import { Input } from "../components/ui/input";
 
-import games from '../games.json'
-
-import { Input } from '../components/ui/input'
-
-type Message = {
-  role: 'user' | 'assistant' | 'tool' | 'system'
-  content: string
-}
-
-async function callAI(messages: Message[]) {
-  const reqData = {
-    model: 'qwen2.5', //"hermes3", //"granite3-dense:8b",
-    options: { temperature: 0 },
-    messages: [
-      {
-        content: `You are a helpful assistant that can search for video games in the provided database and provide information about them. You can use the "games" tool to get the list of all games.`,
-        role: 'system',
-      },
-      ...messages.filter(({ role }) => role !== 'system'),
-    ],
-    tools: [
-      {
-        function: {
-          description: 'returns a list of games',
-          name: 'games',
-          parameters: zodToJsonSchema(
-            z.object({
-              genre: z
-                .enum(['Simulation', 'Action', 'Strategy', 'RPG', 'Adventure'])
-                .describe('The genre of the game'),
-            }),
-          ),
-        },
-        type: 'function',
-      },
-    ],
-  }
-
-  const req = await fetch('http://127.0.0.1:11434/api/chat', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(reqData),
-  })
-
-  let content = ''
-  const decoder = new TextDecoder()
-  for await (const line of req.body) {
-    try {
-      const d = JSON.parse(decoder.decode(line))
-      if (d.message && d.message.role === 'assistant') {
-        content += d.message.content
-      }
-    } catch (e) {}
-  }
-
-  return content
-}
-
-function parseToolCall(message: string) {
-  const trimmed = message.trim().replace(/\n/g, '')
-  if (trimmed.startsWith('<|tool_call|>')) {
-    // Granite format
-    const toolCall = JSON.parse(trimmed.replace('<|tool_call|>', ''))
-    return toolCall[0]
-  } else if (trimmed.startsWith('<tool_call>')) {
-    // Hermes/Qwen format
-    const toolCall = JSON.parse(
-      trimmed.replace('<tool_call>', '').replace('</tool_call>', ''),
-    )
-    return toolCall
-  } else {
-    // Llama 3.x/OpenAI format
-    try {
-      const toolCall = JSON.parse(trimmed)
-      if (typeof toolCall === 'object') {
-        return toolCall
-      }
-    } catch (e) {}
-  }
-}
+import games from "../games.json";
+import { callAI, Message, parseToolCall } from "../ollama-direct";
 
 const chat = createServerFn(
-  'POST',
+  "POST",
   async ({ messages }: { messages: Message[] }): Promise<Message[]> => {
-    let iterations = 0
+    let iterations = 0;
     while (iterations < 5) {
-      const content = await callAI(messages)
+      const content = await callAI(messages);
       messages.push({
-        role: 'assistant',
+        role: "assistant",
         content,
-      })
-      const toolCall = parseToolCall(content)
+      });
+
+      const toolCall = parseToolCall(content);
       if (toolCall) {
-        if (toolCall?.name === 'games') {
-          let filteredGames = games
+        if (toolCall?.name === "games") {
+          let filteredGames = games;
           if (toolCall?.arguments?.genre) {
             filteredGames = games.filter(
-              (g) => g.genre === toolCall.arguments.genre,
-            )
+              (g) => g.genre === toolCall.arguments.genre
+            );
           }
           messages.push({
-            role: 'tool',
+            role: "tool",
             content: JSON.stringify(filteredGames),
-          })
+          });
         }
       } else {
-        break
+        break;
       }
-      iterations++
+      iterations++;
     }
-    return messages
-  },
-)
+    return messages;
+  }
+);
 
-export const Route = createFileRoute('/direct')({
+export const Route = createFileRoute("/direct")({
   component: Test,
-})
+});
 
 function Test() {
-  const [messages, setMessages] = useState<Message[]>([])
-  const [input, setInput] = useState('')
-  const [loading, setLoading] = useState(false)
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setInput('')
-    setLoading(true)
+    e.preventDefault();
+    setInput("");
+    setLoading(true);
 
-    const newMessages = [...messages, { role: 'user', content: input }]
-    setMessages(newMessages)
-    setMessages(await chat({ messages: newMessages }))
+    const newMessages = [...messages, { role: "user", content: input }];
+    setMessages(newMessages);
+    setMessages(await chat({ messages: newMessages }));
 
-    setLoading(false)
-  }
+    setLoading(false);
+  };
 
   return (
     <div className="flex flex-col w-full max-w-md py-24 mx-auto stretch">
       {messages
-        .filter(({ role }) => role === 'user' || role === 'assistant')
+        .filter(({ role }) => role === "user" || role === "assistant")
         .map((m, index) => (
           <div key={index} className="whitespace-pre-wrap">
-            {m.role === 'user' ? 'User: ' : 'AI: '}
-            {m.content}
+            {m.role === "user" ? "User: " : "AI: "}
+            <article className="prose-xl">
+              <Markdown>{m.content}</Markdown>
+            </article>
           </div>
         ))}
 
@@ -168,5 +90,5 @@ function Test() {
         />
       </form>
     </div>
-  )
+  );
 }
