@@ -1,0 +1,10 @@
+{
+  "talk - 5 - game tool": {
+    "scope": "",
+    "prefix": "jh:5-games-tool",
+    "body": [
+      "import { z } from \"zod\";\n\nimport games from \"../games.json\";\n\nconst system = `\n  You are a helpful assistant that can search for video games in our database of video games.\n  You must use the \"games\" tool to get the list of all games in the database.\n`;\n\ntools: {\n  games: tool({\n    description: \"returns a list of games\",\n    parameters: z.object({}),\n    execute: async () => games,\n  }),\n},\n"
+    ],
+    "description": ""
+  }
+}

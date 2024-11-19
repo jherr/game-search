@@ -1,0 +1,10 @@
+{
+  "talk - 8 - onToolCall for showGames": {
+    "scope": "",
+    "prefix": "jh:8-onToolCall-for-showGames",
+    "body": [
+      "    onToolCall: (toolCall) => {\n      if (toolCall.toolCall.toolName === \"showGames\") {\n        return \"Handled by the UI\";\n      }\n    },\n"
+    ],
+    "description": ""
+  }
+}

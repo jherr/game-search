@@ -1,14 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { createServerFn } from "@tanstack/start";
 import { useChat } from "ai/react";
-import { convertToCoreMessages, streamText, Message, tool } from "ai";
-import { openai } from "@ai-sdk/openai";
-import { z } from "zod";
 
 import { Input } from "../components/ui/input";
-import { GameCards } from "../game-cards";
+
+export const Route = createFileRoute("/")({
+  component: Home,
+});
+import { createServerFn } from "@tanstack/start";
+
+import { convertToCoreMessages, streamText, Message, tool } from "ai";
+import { openai } from "@ai-sdk/openai";
+
+import { z } from "zod";
 
 import games from "../games.json";
+import { GameCards } from "../game-cards";
 
 const system = `
   You are a helpful assistant that can search for video games in our database of video games.
@@ -49,10 +55,6 @@ const chat = createServerFn(
   }
 );
 
-export const Route = createFileRoute("/")({
-  component: Home,
-});
-
 const chatFetchOverride: typeof window.fetch = async (input, init) => {
   return chat(JSON.parse(init!.body as string));
 };
@@ -68,7 +70,7 @@ function Home() {
   });
 
   return (
-    <div className="flex flex-col py-10 px-10">
+    <div className="flex flex-col py-10 px-10 text-2xl">
       {messages.map((m) =>
         m.toolInvocations ? (
           m.toolInvocations
@@ -86,17 +88,15 @@ function Home() {
         )
       )}
 
-      <form
-        onSubmit={handleSubmit}
-        className="fixed bottom-0 w-3/4 mb-8 border border-gray-300 rounded shadow-xl"
-      >
+      <form onSubmit={handleSubmit} className="fixed bottom-0 mb-10 w-full">
         <Input
-          className="w-full"
+          className="w-3/4 text-3xl py-8"
           value={input}
-          placeholder="Say something..."
+          placeholder="Ask me for recommendations about video games..."
           onChange={handleInputChange}
         />
       </form>
     </div>
   );
 }
+``;

@@ -1,0 +1,10 @@
+{
+  "talk - 1 - useChat": {
+    "scope": "",
+    "prefix": "jh:1-useChat",
+    "body": [
+      "import { useChat } from \"ai/react\";\n  const { messages, input, handleInputChange, handleSubmit } = useChat({});\n",
+    ],
+    "description": "",
+  },
+}

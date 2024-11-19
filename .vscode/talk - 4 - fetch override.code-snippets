@@ -1,0 +1,10 @@
+{
+  "talk - 4 - fetch override": {
+    "scope": "",
+    "prefix": "jh:4-fetch-override",
+    "body": [
+      "const chatFetchOverride: typeof window.fetch = async (input, init) => {\n  return chat(JSON.parse(init!.body as string));\n};\n"
+    ],
+    "description": ""
+  }
+}

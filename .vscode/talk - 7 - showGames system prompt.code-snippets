@@ -1,0 +1,10 @@
+{
+  "talk - 7 - showGames system prompt": {
+    "scope": "",
+    "prefix": "jh:7-showGames-system-prompt",
+    "body": [
+      "const system = `\n  You are a helpful assistant that can search for video games in our database of video games.\n  You must use the \"games\" tool to get the list of all games in the database.\n  You can use the \"showGames\" tool to show the list of games you would recommend to the user.\n`;\n"
+    ],
+    "description": ""
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "talk - 9 - messages JSX for showGames": {
+    "scope": "",
+    "prefix": "jh:9-messages-for-showGames",
+    "body": [
+      "      {messages.map((m) =>\n        m.toolInvocations ? (\n          m.toolInvocations\n            .filter((ti) => ti.toolName === \"showGames\")\n            .map((ti) => (\n              <div id={ti.toolCallId}>\n                <GameCards games={ti.args.games} />\n              </div>\n            ))\n        ) : (\n          <div key={m.id} className=\"whitespace-pre-wrap\">\n            {m.role === \"user\" ? \"User: \" : \"AI: \"}\n            {m.content}\n          </div>\n        )\n      )}\n"
+    ],
+    "description": ""
+  }
+}

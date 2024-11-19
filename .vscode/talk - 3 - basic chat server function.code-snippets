@@ -1,0 +1,10 @@
+{
+  "talk - 3 - basic chat server function": {
+    "scope": "",
+    "prefix": "jh:3-basic-chat-server-function",
+    "body": [
+      "import { createServerFn } from \"@tanstack/start\";\n\nimport { convertToCoreMessages, streamText, Message } from \"ai\";\nimport { openai } from \"@ai-sdk/openai\";\n\nconst system = `\n  You are a helpful assistant that can search for video games.\n`;\n\nconst chat = createServerFn(\n  \"POST\",\n  async ({ messages }: { messages: Message[] }) => {\n    const result = await streamText({\n      model: openai(\"gpt-4o\"),\n      messages: convertToCoreMessages(messages),\n      system,\n    });\n    return result.toDataStreamResponse();\n  }\n);\n"
+    ],
+    "description": ""
+  }
+}

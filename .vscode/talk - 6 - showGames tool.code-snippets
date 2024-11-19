@@ -1,0 +1,10 @@
+{
+  "talk - 6 - showGames tool": {
+    "scope": "",
+    "prefix": "jh:6-showGames-tool",
+    "body": [
+      "        showGames: tool({\n          description: \"shows the list of recommended games\",\n          parameters: z.object({\n            games: z.array(\n              z.object({\n                id: z.string().describe(\"the id of the game\"),\n                reason: z\n                  .string()\n                  .describe(\"the reason why the game was recommended\"),\n              })\n            ),\n          }),\n        }),\n"
+    ],
+    "description": ""
+  }
+}

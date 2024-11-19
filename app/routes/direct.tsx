@@ -11,8 +11,8 @@ import { callAI, Message, parseToolCall } from "../ollama-direct";
 const chat = createServerFn(
   "POST",
   async ({ messages }: { messages: Message[] }): Promise<Message[]> => {
-    let iterations = 0;
-    while (iterations < 5) {
+    let step = 0;
+    while (step < 5) {
       const content = await callAI(messages);
       messages.push({
         role: "assistant",
@@ -36,7 +36,7 @@ const chat = createServerFn(
       } else {
         break;
       }
-      iterations++;
+      step++;
     }
     return messages;
   }
@@ -57,14 +57,14 @@ function Test() {
     setLoading(true);
 
     const newMessages = [...messages, { role: "user", content: input }];
-    setMessages(newMessages);
-    setMessages(await chat({ messages: newMessages }));
+    setMessages(newMessages as Message[]);
+    setMessages(await chat({ messages: newMessages as Message[] }));
 
     setLoading(false);
   };
 
   return (
-    <div className="flex flex-col w-full max-w-md py-24 mx-auto stretch">
+    <div className="flex flex-col w-full py-24 px-4 mx-auto stretch">
       {messages
         .filter(({ role }) => role === "user" || role === "assistant")
         .map((m, index) => (
@@ -78,12 +78,9 @@ function Test() {
 
       {loading ? <div className="mt-5 italic">Thinking...</div> : null}
 
-      <form
-        onSubmit={handleSubmit}
-        className="fixed bottom-0 w-full max-w-md mb-8 border border-gray-300 rounded shadow-xl"
-      >
+      <form onSubmit={handleSubmit} className="fixed bottom-0 mb-10 w-full">
         <Input
-          className="w-full"
+          className="w-3/4 text-3xl py-8"
           value={input}
           placeholder="Say something..."
           onChange={(e) => setInput(e.target.value)}

@@ -1,0 +1,10 @@
+{
+  "talk - 2 - jsx for basic chat": {
+    "scope": "",
+    "prefix": "jh:2-jsx-for-basic-chat",
+    "body": [
+      "import { Input } from \"../components/ui/input\";\n      {messages.map((m) => (\n        <div key={m.id} className=\"whitespace-pre-wrap mt-5\">\n          {m.role === \"user\" ? \"User: \" : \"AI: \"}\n          {m.content}\n        </div>\n      ))}\n\n      <form\n        onSubmit={handleSubmit}\n        className=\"fixed bottom-0 mb-10 w-full\"\n      >\n        <Input\n          className=\"w-3/4 text-3xl py-8\"\n          value={input}\n          placeholder=\"Ask me for recommendations about video games...\"\n          onChange={handleInputChange}\n        />\n      </form>\n",
+    ],
+    "description": "",
+  },
+}
